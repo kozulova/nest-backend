@@ -37,4 +37,4 @@ $ yarn run test:cov
 
 ## Commit
 
-[Conventional commit](https://github.com/nestjs/nest) is checked by husky.
+[Conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) is checked by husky.
