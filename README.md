@@ -38,3 +38,9 @@ $ yarn run test:cov
 ## Commit
 
 [Conventional commit](https://www.conventionalcommits.org/en/v1.0.0/) is checked by husky.
+
+## Nest cli
+
+$ nest g --help
+$ nest module posts
+$ nest g controller posts
