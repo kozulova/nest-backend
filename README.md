@@ -1,8 +1,23 @@
 ## Description
 
-MSP backend
+- [Structure](#structure)
+- [Prerequisites](#prerequisites)
+- [Running the app](#running-the-app)
+- [Commit](#commit)
+- [Nest cli](#nest-cli)
 
-## Installation
+## Structure
+
+- `src/` - main folder, where project code source is present
+  - `main.ts`
+  - `app.module.ts`
+  - `articles/` - Project module folder
+    - `article.entity.ts`
+    - `article.controller.ts`
+    - `article.module.ts`
+    - `article.service.ts`
+
+## Prerequisites
 
 ```bash
 $ yarn install
@@ -41,6 +56,8 @@ $ yarn run test:cov
 
 ## Nest cli
 
+```bash
 $ nest g --help
 $ nest module posts
 $ nest g controller posts
+```
