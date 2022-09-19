@@ -5,6 +5,8 @@
 - [Running the app](#running-the-app)
 - [Commit](#commit)
 - [Nest cli](#nest-cli)
+- [Docker image](#docker-image)
+- [Benchmark test](#benchmark-test)
 
 ## Structure
 
@@ -60,4 +62,19 @@ $ yarn run test:cov
 $ nest g --help
 $ nest module posts
 $ nest g controller posts
+```
+
+## Docker image
+
+```bash
+$ docker build -t nest .
+$ docker run --name nest -p 3000:3000 -d nest
+```
+
+## Benchmark test
+
+[Apache benchmark for docker](https://hub.docker.com/r/jordi/ab)
+
+```bash
+$ docker run --rm jordi/ab -k -c 100 -n 10000 http://172.17.0.1:3000/articles/
 ```
