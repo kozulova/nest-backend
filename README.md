@@ -74,7 +74,11 @@ $ docker run --name nest -p 3000:3000 -d nest
 ## Benchmark test
 
 [Apache benchmark for docker](https://hub.docker.com/r/jordi/ab)
+Result of 10000 requests is [benchmark.txt](https://github.com/kozulova/nest-backend/blob/main/benchmark.txt)
 
 ```bash
+$ docker pull jordi/ab
+$ docker build -t nest-backend .
+$ docker run --name nest-backend -p 3000:3000 -d nest-backend
 $ docker run --rm jordi/ab -k -c 100 -n 10000 http://172.17.0.1:3000/articles/
 ```
