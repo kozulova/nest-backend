@@ -7,7 +7,7 @@ GET {{ baseURL }}/articles
 
 ###
 # Find one article
-GET {{ baseURL }}/articles/1
+GET {{ baseURL }}/articles/3
 
 ###
 # Create Article
@@ -17,4 +17,18 @@ Content-Type: application/json
 {
     "title": "test",
 	"content": "test"
+}
+
+###
+# Delete one article
+DELETE {{ baseURL }}/articles/3
+
+###
+# Update Article
+PATCH  {{ baseURL }}/articles/2
+Content-Type: application/json
+
+{
+    "title": "testUpdate",
+	"content": "testUpdate"
 }

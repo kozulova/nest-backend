@@ -11,13 +11,14 @@
 ## Structure
 
 - `src/` - main folder, where project code source is present
-  - `main.ts`
-  - `app.module.ts`
+  - `main.ts` - app bootstrap file
+  - `app.module.ts` - main module, where other modules are registered
   - `articles/` - Project module folder
     - `article.entity.ts`
     - `article.controller.ts`
     - `article.module.ts`
     - `article.service.ts`
+    - `dto` - folder with requests' DTO
 
 ## Prerequisites
 
@@ -44,9 +45,6 @@ $ yarn run start:prod
 ```bash
 # unit tests
 $ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
 
 # test coverage
 $ yarn run test:cov
@@ -80,5 +78,5 @@ Result of 10000 requests is [benchmark.txt](https://github.com/kozulova/nest-bac
 $ docker pull jordi/ab
 $ docker build -t nest-backend .
 $ docker run --name nest-backend -p 3000:3000 -d nest-backend
-$ docker run --rm jordi/ab -k -c 100 -n 10000 http://172.17.0.1:3000/articles/
+$ docker run --rm jordi/ab -k -c 100 -n 10000 http://172.17.0.1:3000/articles/ > benchmark.txt
 ```
