@@ -13,17 +13,21 @@
 - `src/` - main folder, where project code source is present
   - `main.ts` - app bootstrap file
   - `app.module.ts` - main module, where other modules are registered
-  - `articles/` - Project module folder
+  - `articles/` - Articles module folder
     - `article.entity.ts`
     - `article.controller.ts`
     - `article.module.ts`
     - `article.service.ts`
     - `dto` - folder with requests' DTO
+  - `auth/` - Auth module
+  - `users/` - Users module
 
 ## Prerequisites
 
 ```bash
+# install dependencies
 $ yarn install
+# add husky hook
 $ yarn prepare
 ```
 
@@ -79,4 +83,10 @@ $ docker pull jordi/ab
 $ docker build -t nest-backend .
 $ docker run --name nest-backend -p 3000:3000 -d nest-backend
 $ docker run --rm jordi/ab -k -c 100 -n 10000 http://172.17.0.1:3000/articles/ > benchmark.txt
+```
+
+Docker PS database start up script
+
+```bash
+$ docker run --name postgres-nest -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
 ```
