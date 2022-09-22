@@ -1,12 +1,11 @@
 import { Repository } from 'typeorm';
 import { Article } from './article.entity';
-import { ArticlesController } from './articles.controller';
 import { ArticlesService } from './articles.service';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { Test, TestingModule } from '@nestjs/testing';
 
 type MockType<T> = {
-  [P in keyof T]?: jest.Mock<{}>;
+  [P in keyof T]?: jest.Mock<any>;
 };
 
 const repositoryMockFactory: () => MockType<Repository<any>> = jest.fn(() => ({
