@@ -14,15 +14,18 @@
   - `main.ts` - app bootstrap file
   - `app.module.ts` - main module, where other modules are registered
   - `articles/` - Articles module folder
-    - `article.entity.ts`
-    - `article.controller.ts`
-    - `article.module.ts`
-    - `article.service.ts`
+    - `article.entity.ts` - Postgres models
+    - `article.controller.ts` - Module routes
+    - `article.module.ts` - setting up of module, it's settings, imports, exports
+    - `article.service.ts` - handles business login and interaction with DB
     - `dto` - folder with requests' DTO
   - `auth/` - Auth module
   - `users/` - Users module
 
 ## Prerequisites
+
+NodeJs v14.17.0
+Yarn package manager
 
 ```bash
 # install dependencies
@@ -73,6 +76,12 @@ $ docker build -t nest .
 $ docker run --name nest -p 3000:3000 -d nest
 ```
 
+Docker Postgres database start up script
+
+```bash
+$ docker run --name postgres-nest -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
+```
+
 ## Benchmark test
 
 [Apache benchmark for docker](https://hub.docker.com/r/jordi/ab)
@@ -85,8 +94,7 @@ $ docker run --name nest-backend -p 3000:3000 -d nest-backend
 $ docker run --rm jordi/ab -k -c 100 -n 10000 http://172.17.0.1:3000/articles/ > benchmark.txt
 ```
 
-Docker PS database start up script
+## Code convention
 
-```bash
-$ docker run --name postgres-nest -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
-```
+- Functions and variables names are in camelCase like `validateUser`
+  Please install cSpell checker https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
