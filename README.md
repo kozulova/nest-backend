@@ -7,6 +7,7 @@
 - [Nest cli](#nest-cli)
 - [Docker image](#docker-image)
 - [Benchmark test](#benchmark-test)
+- [Code convention](#code-convention)
 
 ## Structure
 
@@ -98,3 +99,4 @@ $ docker run --rm jordi/ab -k -c 100 -n 10000 http://172.17.0.1:3000/articles/ >
 
 - Functions and variables names are in camelCase like `validateUser`
   Please install cSpell checker https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
+- File names are hyphen-separated like `local-auth.guard.ts`
