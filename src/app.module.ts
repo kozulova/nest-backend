@@ -4,6 +4,7 @@ import { ArticlesModule } from './articles/articles.module';
 import { HealthCheckController } from './healthcheck.controller';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ShutdownService } from './shutdown.service';
 
 @Module({
   imports: [
@@ -29,6 +30,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     ArticlesModule,
   ],
   controllers: [HealthCheckController],
-  providers: [],
+  providers: [ShutdownService],
 })
 export class AppModule {}
