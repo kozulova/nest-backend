@@ -1,5 +1,5 @@
 # baseURL
-@baseURL = http://localhost:3000
+@baseURL = http://localhost:3002
 
 ###
 # Login User
@@ -10,3 +10,10 @@ Content-Type: application/json
     "username": "john",
 	"password": "changeme"
 }
+
+###
+# Profile
+
+GET {{ baseURL }}/auth/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImpvaG4iLCJpYXQiOjE2NjQ1MjY1MTN9.HdUgzn4asE4lYlKxZK-iVJm3Lhz_ybq0FwXSsJMYLJc
+
