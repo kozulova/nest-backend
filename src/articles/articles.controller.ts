@@ -31,6 +31,7 @@ export class ArticlesController {
   }
   @Delete('/:id')
   deleteArticle(@Param('id') id: number): Promise<void> {
+    console.log('test')
     return this.articlesService.deleteArticleById(id);
   }
   @Patch('/:id')
